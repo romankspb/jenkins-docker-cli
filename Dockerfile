@@ -14,5 +14,7 @@ RUN apt-get update -y && \
    $(lsb_release -cs) \
    stable" && \
    apt-get update -y && \
-   apt-get install -y docker-ce-cli
+   apt-get install -y docker-ce-cli && \
+   curl -L https://github.com/vmware/govmomi/releases/download/v0.22.1/govc_linux_amd64.gz | gunzip -c > /usr/local/bin/govc && \
+   chmod +x /usr/local/bin/govc
 USER 1000
